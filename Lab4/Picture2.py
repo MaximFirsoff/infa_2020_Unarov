@@ -27,9 +27,9 @@ pg.draw.rect(sc, (236, 205, 0), (int(sc_width * 0), 0, 40, 440))
 def hedgehog(x, y):
     """
 
-    :param x:
-    :param y:
-    :return:
+    :param x:   sets the position of the left side of the hedgehog along the axis x
+    :param y:   sets the position of the top side of the hedgehog along the y-axis
+    :return:    draws a hedgehog with given coordinates
     """
     a = hedgehog_width / 2.3
     b = hedgehog_height / 2.3
@@ -38,7 +38,7 @@ def hedgehog(x, y):
 
     pg.draw.ellipse(sc, (68, 0, 19),
                     (sc_width * x + hedgehog_width * 0.9, sc_height * y + hedgehog_height * 0.4, 50, 30))
-    pg.draw.ellipse(sc, (0, 0, 0),
+    pg.draw.ellipse(sc, BLACK,
                     (sc_width * x + hedgehog_width * 0.9, sc_height * y + hedgehog_height * 0.4, 50, 30),1)
 
     pg.draw.ellipse(sc, BLACK,
@@ -55,9 +55,9 @@ def hedgehog(x, y):
                     (sc_width * x + hedgehog_width + 23, sc_height * y + hedgehog_height * 0.4 + 11, 6, 6), 1)
 
     pg.draw.ellipse(sc, (68, 0, 19), (sc_width * x, sc_height * y + hedgehog_height - 20, 40, 20))
-    pg.draw.ellipse(sc, (100, 100, 100), (sc_width * x, sc_height * y + hedgehog_height - 20, 40, 20), 2)
+    pg.draw.ellipse(sc, WHITE, (sc_width * x, sc_height * y + hedgehog_height - 20, 40, 20), 2)
     pg.draw.ellipse(sc, (68, 0, 19), (sc_width * x + hedgehog_width - 35, sc_height * y + hedgehog_height - 20, 40, 20))
-    pg.draw.ellipse(sc, (100, 100, 100),
+    pg.draw.ellipse(sc, WHITE,
                     (sc_width * x + hedgehog_width - 35, sc_height * y + hedgehog_height - 20, 40, 20), 2)
 
     for i in range(30):
@@ -68,7 +68,7 @@ def hedgehog(x, y):
         ver_2 = [sc_width * x + a + x0 + 20 * np.cos(k), sc_height * y + b + y0 - 20 * np.sin(k)]
         ver_3 = [sc_width * x + a + x0 + 5 - 90 * np.sin(k), sc_height * y + b + y0 - 90 * np.cos(k)]
         pg.draw.polygon(sc, (30, 30, 30), [ver_1, ver_2, ver_3], )
-        pg.draw.polygon(sc, (0, 0, 0), [ver_1, ver_2, ver_3], 1)
+        pg.draw.polygon(sc, BLACK, [ver_1, ver_2, ver_3], 1)
 
     pg.draw.ellipse(sc, (255, 33, 0),
                     (sc_width * x + hedgehog_width - 100, sc_height * y + hedgehog_height - 140, 70, 70))
@@ -83,7 +83,7 @@ def hedgehog(x, y):
         ver_2 = [sc_width * x + a + x0 + 20 * np.cos(k), sc_height * y + b + y0 - 20 * np.sin(k)]
         ver_3 = [sc_width * x + a + x0 + 5 - 90 * np.sin(k), sc_height * y + b + y0 - 90 * np.cos(k)]
         pg.draw.polygon(sc, (30, 30, 30), [ver_1, ver_2, ver_3], )
-        pg.draw.polygon(sc, (0, 0, 0), [ver_1, ver_2, ver_3], 1)
+        pg.draw.polygon(sc, BLACK, [ver_1, ver_2, ver_3], 1)
 
     pg.draw.ellipse(sc, WHITE,
                     (sc_width * x + hedgehog_width - 140, sc_height * y + hedgehog_height - 160, 20, 70))
